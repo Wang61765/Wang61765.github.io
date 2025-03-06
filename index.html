@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王硕翔 | 三角洲特工</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7C3AED;  /* 电子紫 */
+            --secondary: #10B981; /* 赛博绿 */
+            --accent: #F59E0B;   /* 霓虹黄 */
+            --matrix: #00ff88;   /* 矩阵绿 */
+        }
+
+        body {
+            background: radial-gradient(circle at top, #1a1a1a 0%, #0d0d0d 100%);
+            font-family: 'Microsoft YaHei', sans-serif;
+            color: #e5e7eb;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        /* 赛博边框 */
+        .cyber-border {
+            position: relative;
+            padding: 4rem 2rem;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            box-shadow: 0 0 30px rgba(122, 66, 235, 0.2);
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        /* 全息头像 */
+        .hologram-avatar {
+            width: 180px;
+            height: 180px;
+            border: 3px solid transparent;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary)) border-box;
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            animation: glow 2s infinite alternate;
+        }
+
+        /* 时间轴布局 */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            transform: translateX(-50%);
+        }
+
+        /* 时间轴卡片 */
+        .timeline-card {
+            position: relative;
+            width: calc(50% - 40px);
+            padding: 25px;
+            margin: 20px 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        /* 数据看板 */
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        /* 成就徽章 */
+        .cyber-badge {
+            background: rgba(124,58,237,0.1);
+            border: 1px solid var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 动态效果 */
+        @keyframes glow {
+            from { box-shadow: 0 0 20px -5px var(--primary); }
+            to { box-shadow: 0 0 30px 5px var(--primary); }
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100%) rotate(45deg); }
+            100% { transform: translateY(100%) rotate(45deg); }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .timeline::before { left: 20px; }
+            .timeline-card {
+                width: calc(100% - 40px);
+                left: 0 !important;
+                margin-left: 40px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-border">
+        <!-- 头部档案 -->
+        <header style="text-align: center; padding: 4rem 0;">
+            <img src="avatar.jpg" alt="特工头像" class="hologram-avatar">
+            <h1 style="color: var(--matrix); text-shadow: 0 0 15px var(--matrix); margin: 2rem 0;">
+                王硕翔 | 代号: 202331505
+            </h1>
+            <div style="background: linear-gradient(to right, var(--primary), var(--secondary)); 
+                      height: 2px; width: 200px; margin: 0 auto;">
+            </div>
+            <p style="color: #94a3b8; margin-top: 1rem;">
+                <i class="fas fa-terminal"></i>
+                华北水利水电大学 | 三角洲世界特工
+            </p>
+        </header>
+
+        <!-- 数据看板 -->
+        <section class="matrix-grid">
+            <div class="cyber-badge">
+                <div style="color: var(--secondary);">代码存储量</div>
+                <div style="font-size: 2em;">15.8k</div>
+                <div style="color: #94a3b8;">行有效代码</div>
+            </div>
+            <div class="cyber-badge">
+                <div style="color: var(--accent);">知识节点</div>
+                <div style="font-size: 2em;">237</div>
+                <div style="color: #94a3b8;">技术领域覆盖</div>
+            </div>
+            <div class="cyber-badge">
+                <div style="color: var(--primary);">系统经验</div>
+                <div style="font-size: 2em;">8</div>
+                <div style="color: #94a3b8;">完成项目</div>
+            </div>
+        </section>
+
+        <!-- 时间轴 -->
+        <div class="timeline">
+            <!-- 战术竞技 -->
+            <div class="timeline-card">
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div style="width: 60px; height: 60px; background: var(--primary); 
+                              border-radius: 12px; display: grid; place-items: center;">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <h3>战术竞技场</h3>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <div style="border-left: 3px solid var(--accent); padding-left: 1rem;">
+                        <div style="color: var(--secondary);">日均训练时长</div>
+                        <div style="color: #94a3b8;">2.8小时/日</div>
+                    </div>
+                    <div style="border-left: 3px solid var(--primary); 
+                              padding-left: 1rem; margin-top: 1rem;">
+                        <div style="color: var(--accent);">最佳战绩</div>
+                        <div style="color: #94a3b8;">100杀/局</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 项目经验 -->
+            <div class="timeline-card">
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div style="width: 60px; height: 60px; background: var(--secondary); 
+                              border-radius: 12px; display: grid; place-items: center;">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>任务日志</h3>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <div class="project-item">
+                        <div style="color: var(--matrix);">› 智慧校园系统</div>
+                        <div style="color: #94a3b8; font-size: 0.9em;">
+                            React + Node.js | 提升考勤效率40%
+                        </div>
+                    </div>
+                    <div class="project-item" style="margin-top: 1rem;">
+                        <div style="color: var(--matrix);">› 算法可视化</div>
+                        <div style="color: #94a3b8; font-size: 0.9em;">
+                            Vue + D3.js | 15+经典算法演示
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 技术栈 -->
+            <div class="timeline-card">
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div style="width: 60px; height: 60px; background: var(--accent); 
+                              border-radius: 12px; display: grid; place-items: center;">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>技术矩阵</h3>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); 
+                          gap: 1rem; margin-top: 1.5rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2em; color: var(--primary);">85%</div>
+                        <div style="font-size: 0.8em;">前端架构</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2em; color: var(--secondary);">75%</div>
+                        <div style="font-size: 0.8em;">服务端</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2em; color: var(--accent);">68%</div>
+                        <div style="font-size: 0.8em;">数据库</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 成就系统 -->
+        <section style="text-align: center; padding: 4rem 0;">
+            <h2 style="color: var(--matrix); text-shadow: 0 0 10px var(--matrix);">
+                已解锁成就
+            </h2>
+            <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
+                <div class="cyber-badge" style="width: 150px;">
+                    <i class="fas fa-code-merge"></i>
+                    <div style="margin-top: 1rem;">S1巅峰战神</div>
+                </div>
+                <div class="cyber-badge" style="width: 150px;">
+                    <i class="fas fa-shield-alt"></i>
+                    <div style="margin-top: 1rem;">S2巅峰战神</div>
+                </div>
+                <div class="cyber-badge" style="width: 150px;">
+                    <i class="fas fa-infinity"></i>
+                    <div style="margin-top: 1rem;">终身打粥</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer style="text-align: center; color: #64748b; padding-top: 4rem;">
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
+                <a href="#" style="color: var(--primary);">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="#" style="color: var(--secondary);">
+                    <i class="fab fa-weixin fa-2x"></i>
+                </a>
+            </div>
+            <p>通信协议: 18538821013@163.com</p>
+            <p>物理坐标: 郑州·华北水利水电大学</p>
+            <div style="margin-top: 2rem; opacity: 0.5;">
+                SYSTEM VERSION: GLQ-OS 2024.1
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
